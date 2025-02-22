@@ -1,10 +1,6 @@
 # AI 投资系统
 
-❗2025/02/16更新
-当前版本数据源出了问题，大家可以自己换数据源。
-如果想获得直接能用的版本，可以加入我的知识星球（下方有二维码），星球里我已经上传修复后的版本。
-另外，星球中还有更多我个人分享的资料和对该项目的解析噢。
-
+❗ 经测试，配置好GEMINI_API_KEY就可以正常使用。
 
 
 这个系统目前是只支持 A 股的哈。
@@ -46,27 +42,13 @@ git clone https://github.com/24mlight/A_Share_investment_Agent.git
 cd A_Share_investment_Agent
 ```
 
-1. Install Poetry:
-
-# Windows (PowerShell)
-
-```powershell
-(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
-```
-
-# Unix/macOS
+1. Install dependencies:
 
 ```bash
-curl -sSL https://install.python-poetry.org | python3 -
+pip install -r requirements.txt
 ```
 
-2. Install dependencies:
-
-```bash
-poetry install
-```
-
-3. Set up your environment variables:
+2. Set up your environment variables:
 
 ```bash
 # Create .env file for your API keys
@@ -112,7 +94,7 @@ $env:GEMINI_MODEL='gemini-1.5-flash'
 1. **基本运行**
 
 ```bash
-poetry run python src/main.py --ticker 301155
+python src/main.py --ticker 301155
 ```
 
 这将使用默认参数运行系统，包括：
@@ -124,7 +106,7 @@ poetry run python src/main.py --ticker 301155
 2. **显示分析推理过程**
 
 ```bash
-poetry run python src/main.py --ticker 301155 --show-reasoning
+python src/main.py --ticker 301155 --show-reasoning
 ```
 
 这将显示每个智能体（Market Data Agent、Technical Analyst、Fundamentals Agent、Sentiment Agent、Risk Manager、Portfolio Manager）的分析过程和推理结果。
@@ -136,7 +118,7 @@ poetry run python src/main.py --ticker 301155 --show-reasoning
 4. **自定义新闻分析数量和具体日期的投资建议**
 
 ```bash
-poetry run python src/main.py --ticker 301157 --show-reasoning --end-date 2024-12-11 --num-of-news 20
+python src/main.py --ticker 301157 --show-reasoning --end-date 2024-12-11 --num-of-news 20
 ```
 
 这将：
@@ -147,7 +129,7 @@ poetry run python src/main.py --ticker 301157 --show-reasoning --end-date 2024-1
 5. **回测功能**
 
 ```bash
-poetry run python src/backtester.py --ticker 301157 --start-date 2024-12-11 --end-date 2025-01-07 --num-of-news 20
+python src/backtester.py --ticker 301157 --start-date 2024-12-11 --end-date 2025-01-07 --num-of-news 20
 ```
 
 回测功能支持以下参数：
@@ -308,33 +290,6 @@ ai-hedge-fund/
 ## 许可证
 
 本项目基于 MIT 许可证 - 详见 LICENSE 文件。
-
-## ☕️ 请作者喝杯咖啡
-
-如果这个项目对你有帮助，欢迎请我喝杯咖啡 ❤️
-
-<img src="src/data/img/ali.png" alt="支付宝收款码" width="300"/>
-
-### 🌟 加入我们的社区
-=======
-同时也欢迎关注我们的公众号【空指针指向量化 Agent】，获取更多量化投资和 AI 智能交易相关的干货内容！ 🚀
-
-<div style="display: flex; justify-content: space-between;">
-    <div style="text-align: center; margin-right: 20px;">
-        <p>关注公众号【空指针指向了量化 Agent】，获取更多量化投资和 AI 智能交易相关的干货内容！
-        现在关注即可领取 <b>¥20</b> 知识星球优惠券！🎁</p>
-        <img src="src/data/img/gzh_code.jpg" alt="公众号二维码" width="300"/>
-    </div>
-</div>
-
-<div style="text-align: center;">
-        <p>欢迎加入我们的知识星球！这里不仅有更多深度干货，还有：<br/>
-        🔥 独家策略、资料分享<br/>
-        👥 量化投资交流<br/>
-        💡 一对一答疑解惑</p>
-        <img src="src/data/img/planet.jpg" alt="知识星球二维码" width="300"/>
-</div>
-❗❗ 为防止苹果收取手续费，苹果用户请添加我的微信加入星球，微信号: PareidoliaX
 
 ## 项目详细说明
 
