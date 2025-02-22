@@ -38,7 +38,7 @@
 Clone the repository:
 
 ```bash
-git clone https://github.com/24mlight/A_Share_investment_Agent.git
+git clone https://github.com/quanzhankf/A_Share_investment_Agent.git
 cd A_Share_investment_Agent
 ```
 
